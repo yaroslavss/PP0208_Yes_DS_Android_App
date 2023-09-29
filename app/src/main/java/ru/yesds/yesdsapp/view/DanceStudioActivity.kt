@@ -3,17 +3,18 @@ package ru.yesds.yesdsapp.view
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.material.snackbar.Snackbar
 import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.ActivityDanceStudioBinding
 
 class DanceStudioActivity : AppCompatActivity() {
 
+    lateinit var toggle: ActionBarDrawerToggle
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDanceStudioBinding
 
@@ -23,16 +24,19 @@ class DanceStudioActivity : AppCompatActivity() {
         binding = ActivityDanceStudioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // set up navigation
         setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        // set up navigation drawer
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.nd_open, R.string.nd_close)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -45,6 +49,9 @@ class DanceStudioActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
         return when (item.itemId) {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
