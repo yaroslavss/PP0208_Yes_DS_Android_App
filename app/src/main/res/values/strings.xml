@@ -3,18 +3,8 @@
     <string name="action_settings">Settings</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <!-- Strings used for fragments for navigation -->
-    <string name="nd_open">Open</string>
-    <string name="nd_close">Close</string>
-
-    <!-- Menu items for navigation drawer -->
-    <string name="nd_mi_main_page">Главная</string>
-    <string name="nd_mi_about">О студии</string>
+    <string name="main_page_fragment_label">Главная</string>
+    <string name="about_fragment_label">О студии</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

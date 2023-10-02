@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/miMainPage"
-        android:title="@string/nd_mi_main_page" />
+        android:id="@+id/mainPageFragment"
+        android:title="@string/main_page_fragment_label" />
     <item
-        android:id="@+id/miAbout"
-        android:title="@string/nd_mi_about" />
+        android:id="@+id/aboutFragment"
+        android:title="@string/about_fragment_label" />
 </menu>

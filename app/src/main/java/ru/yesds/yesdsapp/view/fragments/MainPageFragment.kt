@@ -1,12 +1,10 @@
 package ru.yesds.yesdsapp.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import ru.yesds.yesdsapp.R
+import androidx.fragment.app.Fragment
 import ru.yesds.yesdsapp.databinding.FragmentMainPageBinding
 
 class MainPageFragment : Fragment() {
@@ -29,10 +27,6 @@ class MainPageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_mainPageFragment_to_aboutFragment)
-        }
     }
 
     override fun onDestroyView() {

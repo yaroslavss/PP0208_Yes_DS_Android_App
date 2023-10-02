@@ -1,20 +1,19 @@
 package ru.yesds.yesdsapp.view
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationView
 import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.ActivityDanceStudioBinding
 
 class DanceStudioActivity : AppCompatActivity() {
 
-    lateinit var toggle: ActionBarDrawerToggle
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDanceStudioBinding
 
@@ -24,38 +23,18 @@ class DanceStudioActivity : AppCompatActivity() {
         binding = ActivityDanceStudioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // set up navigation
+        // set the toolbar as the app bar for the activity
         setSupportActionBar(binding.toolbar)
 
+        // set up navigation
+        val drawerLayout: DrawerLayout = binding.drawerLayout
+        val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-        // set up navigation drawer
-        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.nd_open, R.string.nd_close)
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
-        }
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
+        navView.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
