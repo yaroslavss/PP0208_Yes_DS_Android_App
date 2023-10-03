@@ -8,12 +8,60 @@
         android:id="@+id/mainPageFragment"
         android:name="ru.yesds.yesdsapp.view.fragments.MainPageFragment"
         android:label="@string/main_page_fragment_label"
-        tools:layout="@layout/fragment_main_page" >
+        tools:layout="@layout/fragment_main_page">
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="ru.yesds.yesdsapp.view.fragments.AboutFragment"
         android:label="@string/about_fragment_label"
-        tools:layout="@layout/fragment_about" >
+        tools:layout="@layout/fragment_about">
+    </fragment>
+    <fragment
+        android:id="@+id/stylesFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.StylesFragment"
+        android:label="@string/styles_fragment_label"
+        tools:layout="@layout/fragment_styles">
+    </fragment>
+    <fragment
+        android:id="@+id/teachersFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.TeachersFragment"
+        android:label="@string/teachers_fragment_label"
+        tools:layout="@layout/fragment_teachers">
+    </fragment>
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.TimetableFragment"
+        android:label="@string/timetable_fragment_label"
+        tools:layout="@layout/fragment_timetable">
+    </fragment>
+    <fragment
+        android:id="@+id/pricesFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.PricesFragment"
+        android:label="@string/prices_fragment_label"
+        tools:layout="@layout/fragment_prices">
+    </fragment>
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.ContactsFragment"
+        android:label="@string/contacts_fragment_label"
+        tools:layout="@layout/fragment_contacts">
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.ProfileFragment"
+        android:label="@string/profile_fragment_label"
+        tools:layout="@layout/fragment_profile">
+    </fragment>
+    <fragment
+        android:id="@+id/callStudioFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.CallStudioFragment"
+        android:label="@string/call_studio_fragment_label"
+        tools:layout="@layout/fragment_call_studio">
+    </fragment>
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="ru.yesds.yesdsapp.view.fragments.MessagesFragment"
+        android:label="@string/messages_fragment_label"
+        tools:layout="@layout/fragment_messages">
     </fragment>
 </navigation>
