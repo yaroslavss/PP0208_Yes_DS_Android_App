@@ -1,15 +1,15 @@
-package ru.yesds.yesdsapp.view.fragments
+package ru.yesds.yesdsapp.ui.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.yesds.yesdsapp.databinding.FragmentAboutBinding
+import ru.yesds.yesdsapp.databinding.FragmentTeachersBinding
 
-class AboutFragment : Fragment() {
+class TeachersFragment : Fragment() {
 
-    private var _binding: FragmentAboutBinding? = null
+    private var _binding: FragmentTeachersBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,7 +20,7 @@ class AboutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        _binding = FragmentTeachersBinding.inflate(inflater, container, false)
         return binding.root
 
     }
