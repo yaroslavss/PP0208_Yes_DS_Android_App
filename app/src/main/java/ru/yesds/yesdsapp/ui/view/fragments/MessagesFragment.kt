@@ -1,4 +1,4 @@
-package ru.yesds.yesdsapp.view.fragments
+package ru.yesds.yesdsapp.ui.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
