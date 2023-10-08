@@ -7,20 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import ru.yesds.yesdsapp.databinding.FragmentMainPageBinding
-import ru.yesds.yesdsapp.ui.viewmodel.MainPageFragmentViewModel
+import ru.yesds.yesdsapp.ui.viewmodel.MainPageViewModel
 
 class MainPageFragment : Fragment() {
 
     private var _binding: FragmentMainPageBinding? = null
     private val viewModel by lazy {
-        ViewModelProvider(this).get(MainPageFragmentViewModel::class.java)
+        ViewModelProvider(this).get(MainPageViewModel::class.java)
     }
-    private val scope = CoroutineScope(Dispatchers.IO)
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -39,15 +34,11 @@ class MainPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // make network request
-        scope.launch {
-            val image = viewModel.getCat().image
-            println("Image: $image")
-            withContext(Dispatchers.Main) {
-                Glide.with(this@MainPageFragment)
-                    .load(image)
-                    .into(binding.ivCat)
-            }
+        viewModel.image.observe(viewLifecycleOwner) {
+            println("!!! Image: $it")
+            Glide.with(this@MainPageFragment)
+                .load(it)
+                .into(binding.ivCat)
         }
     }
 

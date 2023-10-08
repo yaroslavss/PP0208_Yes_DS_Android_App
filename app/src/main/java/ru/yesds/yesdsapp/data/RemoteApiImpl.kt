@@ -2,6 +2,7 @@ package ru.yesds.yesdsapp.data
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.yesds.yesdsapp.data.Constants.BASE_URL
@@ -20,7 +21,7 @@ class RemoteApiImpl : RemoteApi {
         .build()
     private val remoteService = retrofit.create(CatService::class.java)
 
-    override suspend fun getCat(): CatResponse? {
-        return remoteService.getCat().body()
+    override suspend fun getCat(): Response<CatResponse> {
+        return remoteService.getCat()
     }
 }
