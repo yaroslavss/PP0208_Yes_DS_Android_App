@@ -24,5 +24,9 @@ class RetrofitInstance {
         val catApi by lazy {
             retrofit.create(CatService::class.java)
         }
+
+        val authApi by lazy {
+            retrofit.create(AuthService::class.java)
+        }
     }
 }
