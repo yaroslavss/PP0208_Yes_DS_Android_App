@@ -11,7 +11,7 @@ import ru.yesds.yesdsapp.data.AuthRepositoryImpl
 import ru.yesds.yesdsapp.model.User
 import ru.yesds.yesdsapp.util.ApiResponse
 
-class ProfileViewModel : ViewModel() {
+class UserViewModel : ViewModel() {
     private val repositoryImpl = AuthRepositoryImpl(AuthApiImpl())
     private val _user = MutableLiveData<User>().apply {
         value = null
@@ -31,5 +31,4 @@ class ProfileViewModel : ViewModel() {
             }
         }
     }
-
 }
