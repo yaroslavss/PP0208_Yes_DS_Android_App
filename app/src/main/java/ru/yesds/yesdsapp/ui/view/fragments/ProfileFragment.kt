@@ -53,8 +53,8 @@ class ProfileFragment : Fragment() {
             viewModel.signIn(User(login, password, ""))
         }
 
-        viewModel.token.observe(viewLifecycleOwner) {
-            println("!!! $it")
+        viewModel.user.observe(viewLifecycleOwner) { user ->
+            println("!!! $user")
         }
     }
 
