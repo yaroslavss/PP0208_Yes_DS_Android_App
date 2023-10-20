@@ -1,5 +1,6 @@
 package ru.yesds.yesdsapp.ui.view.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -37,12 +38,28 @@ class ProfileFragment : Fragment() {
 
         val navController = findNavController()
 
-        viewModel.user.observe(viewLifecycleOwner) { user ->
-            println("!!! Profile fragment: $user")
-            if (user == null) {
+        val sharedPreferences =
+            requireActivity().applicationContext.getSharedPreferences(
+                "settings",
+                Context.MODE_PRIVATE
+            )
+
+        val token = sharedPreferences.getString("API_TOKEN", "")
+
+        println("!!! profile: $token")
+
+        token?.let {
+            if (it.isEmpty()) {
                 navController.navigate(R.id.loginFragment)
             }
         }
+
+        /*viewModel.user.observe(viewLifecycleOwner) { user ->
+            println("!!! Profile fragment: $user")
+            *//*if (user == null) {
+                navController.navigate(R.id.loginFragment)
+            }*//*
+        }*/
     }
 
     override fun onDestroyView() {
