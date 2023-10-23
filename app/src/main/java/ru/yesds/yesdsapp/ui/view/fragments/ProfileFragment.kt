@@ -53,13 +53,6 @@ class ProfileFragment : Fragment() {
                 navController.navigate(R.id.loginFragment)
             }
         }
-
-        /*viewModel.user.observe(viewLifecycleOwner) { user ->
-            println("!!! Profile fragment: $user")
-            *//*if (user == null) {
-                navController.navigate(R.id.loginFragment)
-            }*//*
-        }*/
     }
 
     override fun onDestroyView() {
