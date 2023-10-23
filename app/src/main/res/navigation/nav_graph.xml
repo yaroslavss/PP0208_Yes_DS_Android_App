@@ -64,4 +64,10 @@
         android:label="@string/messages_fragment_label"
         tools:layout="@layout/fragment_messages">
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ru.yesds.yesdsapp.ui.view.fragments.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
+    </fragment>
 </navigation>

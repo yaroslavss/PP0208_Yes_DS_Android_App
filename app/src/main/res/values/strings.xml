@@ -13,7 +13,13 @@
     <string name="profile_fragment_label">Личный кабинет</string>
     <string name="call_studio_fragment_label">Позвонить в студию</string>
     <string name="messages_fragment_label">Уведомления</string>
+    <string name="login_fragment_label">Вход</string>
 
+    <!-- Strings used for profile (login) fragment -->
+    <string name="et_login_label">Введите логин</string>
+    <string name="et_password_label">Введите пароль</string>
+    <string name="btn_auth_text">Вход</string>
+    <string name="msg_empty_auth">Введите имя пользователя и пароль</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
