@@ -8,8 +8,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.yesds.yesdsapp.data.AuthApiImpl
 import ru.yesds.yesdsapp.data.AuthRepositoryImpl
+import ru.yesds.yesdsapp.data.DatabaseRepositoryImpl
 import ru.yesds.yesdsapp.model.User
 import ru.yesds.yesdsapp.util.ApiResponse
+import javax.inject.Inject
 
 class UserViewModel : ViewModel() {
     private val repositoryImpl = AuthRepositoryImpl(AuthApiImpl())
@@ -17,6 +19,9 @@ class UserViewModel : ViewModel() {
         value = null
     }
     val user: LiveData<User> = _user
+
+    @Inject
+    lateinit var databaseRepositoryImpl: DatabaseRepositoryImpl
 
     fun signIn(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
