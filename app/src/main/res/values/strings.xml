@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">YesDSApp</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="main_page_fragment_label">Главная</string>
+    <string name="about_fragment_label">О студии</string>
+    <string name="styles_fragment_label">Направления</string>
+    <string name="teachers_fragment_label">Преподаватели</string>
+    <string name="timetable_fragment_label">Расписание</string>
+    <string name="prices_fragment_label">Цены</string>
+    <string name="contacts_fragment_label">Контакты</string>
+    <string name="profile_fragment_label">Личный кабинет</string>
+    <string name="call_studio_fragment_label">Позвонить в студию</string>
+    <string name="messages_fragment_label">Уведомления</string>
+    <string name="login_fragment_label">Вход</string>
+
+    <!-- Strings used for profile (login) fragment -->
+    <string name="et_login_label">Введите логин</string>
+    <string name="et_password_label">Введите пароль</string>
+    <string name="btn_auth_text">Вход</string>
+    <string name="msg_empty_auth">Введите имя пользователя и пароль</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+    </string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainPageFragment"
+        android:title="@string/main_page_fragment_label" />
+    <item
+        android:id="@+id/aboutFragment"
+        android:title="@string/about_fragment_label" />
+    <item
+        android:id="@+id/stylesFragment"
+        android:title="@string/styles_fragment_label" />
+    <item
+        android:id="@+id/teachersFragment"
+        android:title="@string/teachers_fragment_label" />
+    <item
+        android:id="@+id/timetableFragment"
+        android:title="@string/timetable_fragment_label" />
+    <item
+        android:id="@+id/pricesFragment"
+        android:title="@string/prices_fragment_label" />
+    <item
+        android:id="@+id/contactsFragment"
+        android:title="@string/contacts_fragment_label" />
+    <item
+        android:id="@+id/profileFragment"
+        android:title="@string/profile_fragment_label" />
+    <item
+        android:id="@+id/callStudioFragment"
+        android:title="@string/call_studio_fragment_label" />
+    <item
+        android:id="@+id/messagesFragment"
+        android:title="@string/messages_fragment_label" />
+</menu>
