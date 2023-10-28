@@ -1,6 +1,5 @@
 package ru.yesds.yesdsapp.ui.view.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.FragmentLoginBinding
 import ru.yesds.yesdsapp.model.User
@@ -24,6 +27,7 @@ class LoginFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var scope: CoroutineScope
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,19 +63,16 @@ class LoginFragment : Fragment() {
             // password = 9uQFF1Lh
             viewModel.signIn(User(login, password, ""))
 
-            viewModel.user.observe(viewLifecycleOwner) { user ->
-                println("!!! Login fragment user: $user")
-
-                if (user != null) {
-                    val sharedPreferences =
-                        requireActivity().applicationContext.getSharedPreferences(
-                            "settings",
-                            Context.MODE_PRIVATE
-                        )
-                    sharedPreferences.edit().putString("API_TOKEN", user.token).apply()
-
-                    navController.popBackStack()
-                    navController.navigate(R.id.profileFragment)
+            scope = CoroutineScope(Dispatchers.IO).also { scope ->
+                scope.launch {
+                    viewModel.getUserFromDB().collect { userEntity ->
+                        withContext(Dispatchers.Main) {
+                            println("!!! LF: userEntity = $userEntity")
+                            if (userEntity != null) {
+                                navController.navigate(R.id.profileFragment)
+                            }
+                        }
+                    }
                 }
             }
         }
