@@ -6,5 +6,5 @@ import ru.yesds.yesdsapp.data.db.UserEntity
 class DatabaseRepositoryImpl(private val userDao: UserDao) : DatabaseRepository {
     override suspend fun saveUser(user: UserEntity) = userDao.saveUser(user)
 
-    fun getUser() = userDao.getUser()
+    override fun getUser() = userDao.getUser()
 }
