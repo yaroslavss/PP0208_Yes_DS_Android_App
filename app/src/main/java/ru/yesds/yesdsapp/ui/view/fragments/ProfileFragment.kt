@@ -54,6 +54,11 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+
+        // proceed user's sign out
+        binding.btnLogout.setOnClickListener {
+            viewModel.signOut()
+        }
     }
 
     override fun onDestroyView() {

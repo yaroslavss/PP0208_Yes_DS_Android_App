@@ -7,4 +7,6 @@ class DatabaseRepositoryImpl(private val userDao: UserDao) : DatabaseRepository 
     override suspend fun saveUser(user: UserEntity) = userDao.saveUser(user)
 
     override fun getUser() = userDao.getUser()
+
+    override suspend fun deleteAllUsers() = userDao.deleteAll()
 }

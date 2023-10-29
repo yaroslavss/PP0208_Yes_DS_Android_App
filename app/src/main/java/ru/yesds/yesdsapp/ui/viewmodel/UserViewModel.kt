@@ -38,4 +38,10 @@ class UserViewModel : ViewModel() {
     }
 
     fun getUserFromDB() = databaseRepositoryImpl.getUser()
+
+    fun signOut() {
+        viewModelScope.launch(Dispatchers.IO) {
+            databaseRepositoryImpl.deleteAllUsers()
+        }
+    }
 }

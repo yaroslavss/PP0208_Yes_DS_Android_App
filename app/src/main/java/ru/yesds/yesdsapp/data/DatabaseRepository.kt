@@ -7,4 +7,6 @@ interface DatabaseRepository {
     suspend fun saveUser(user: UserEntity)
 
     fun getUser(): Flow<UserEntity>
+
+    suspend fun deleteAllUsers()
 }
