@@ -15,7 +15,10 @@
     <string name="messages_fragment_label">Уведомления</string>
     <string name="login_fragment_label">Вход</string>
 
-    <!-- Strings used for profile (login) fragment -->
+    <!-- Strings used for profile fragment -->
+    <string name="btn_logout_text">Выход</string>
+
+    <!-- Strings used for login fragment -->
     <string name="et_login_label">Введите логин</string>
     <string name="et_password_label">Введите пароль</string>
     <string name="btn_auth_text">Вход</string>
