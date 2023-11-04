@@ -18,8 +18,7 @@
         <activity
             android:name=".ui.view.DanceStudioActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.YesDSApp">
+            android:theme="@style/Theme.YesDSApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

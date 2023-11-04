@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">YesDSApp</string>
-    <string name="action_settings">Settings</string>
+
+    <!-- Strings used for top app bar menu -->
+    <string name="action_make_call">Сделать звонок</string>
+    <string name="action_notifications">Уведомления</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="main_page_fragment_label">Главная</string>
