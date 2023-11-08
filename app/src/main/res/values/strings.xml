@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">YesDSApp</string>
-    <string name="action_settings">Settings</string>
 
-    <!-- Strings used for fragments for navigation -->
+    <!-- Strings used for top app bar menu -->
+    <string name="action_make_call">Сделать звонок</string>
+    <string name="action_notifications">Уведомления</string>
+
+    <!-- Strings used for fragments for navigation drawer -->
     <string name="main_page_fragment_label">Главная</string>
     <string name="about_fragment_label">О студии</string>
     <string name="styles_fragment_label">Направления</string>
@@ -14,6 +17,10 @@
     <string name="call_studio_fragment_label">Позвонить в студию</string>
     <string name="messages_fragment_label">Уведомления</string>
     <string name="login_fragment_label">Вход</string>
+
+    <!-- Strings used for fragments for bottom navigation -->
+    <string name="profile_fragment_label_bottom">Профиль</string>
+    <string name="membership_fragment_label_bottom">Абонемент</string>
 
     <!-- Strings used for profile fragment -->
     <string name="btn_logout_text">Выход</string>

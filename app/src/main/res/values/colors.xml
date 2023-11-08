@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- YES Dance Studio colors -->
+    <color name="main_color">#FFF7F3F3</color>
+    <color name="red_color">#FFE20055</color>
 </resources>

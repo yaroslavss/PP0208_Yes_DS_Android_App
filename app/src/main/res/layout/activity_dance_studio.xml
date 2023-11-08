@@ -11,12 +11,17 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        app:statusBarForeground="@color/main_color"
+        android:theme="@style/Theme.YesDSApp.AppBarOverlay">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/main_color"
+            app:popupTheme="@style/Theme.YesDSApp.PopupOverlay"
+            app:menu="@menu/menu_main" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
