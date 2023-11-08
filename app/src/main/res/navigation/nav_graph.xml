@@ -70,4 +70,10 @@
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
     </fragment>
+    <fragment
+        android:id="@+id/membershipFragment"
+        android:name="ru.yesds.yesdsapp.ui.view.fragments.MembershipFragment"
+        android:label="@string/membership_fragment_label_bottom"
+        tools:layout="@layout/fragment_membership">
+    </fragment>
 </navigation>
