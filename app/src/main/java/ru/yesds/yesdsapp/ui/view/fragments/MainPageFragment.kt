@@ -34,12 +34,12 @@ class MainPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.image.observe(viewLifecycleOwner) {
+        /*viewModel.image.observe(viewLifecycleOwner) {
             println("!!! Image: $it")
             Glide.with(this@MainPageFragment)
                 .load(it)
                 .into(binding.ivCat)
-        }
+        }*/
     }
 
     override fun onDestroyView() {

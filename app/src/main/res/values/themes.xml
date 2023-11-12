@@ -37,4 +37,6 @@
         <item name="colorSurface">@color/main_color</item>
         <item name="colorOnSurfaceVariant">@color/black</item>
     </style>
+
+    <!-- button -->
 </resources>
