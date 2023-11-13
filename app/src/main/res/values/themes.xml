@@ -8,6 +8,7 @@
 
     <style name="Theme.YesDSApp" parent="Base.Theme.YesDSApp">
         <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
     <style name="Theme.YesDSApp.NoActionBar">
@@ -38,5 +39,12 @@
         <item name="colorOnSurfaceVariant">@color/black</item>
     </style>
 
-    <!-- button -->
+    <!-- buttons -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button" parent="ThemeOverlay.Material3.Button">
+        <item name="colorPrimary">@color/red_color</item>
+    </style>
 </resources>

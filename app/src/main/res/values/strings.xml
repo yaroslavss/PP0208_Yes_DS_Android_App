@@ -22,6 +22,10 @@
     <string name="profile_fragment_label_bottom">Профиль</string>
     <string name="membership_fragment_label_bottom">Абонемент</string>
 
+    <!-- Strings used for main page fragment -->
+    <string name="first_training_msg_1">Первое занятие БЕСПЛАТНО!</string>
+    <string name="first_training_msg_2">При первом посещении Студии</string>
+
     <!-- Strings used for profile fragment -->
     <string name="btn_logout_text">Выход</string>
 
