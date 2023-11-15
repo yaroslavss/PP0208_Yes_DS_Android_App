@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
+import androidx.navigation.findNavController
+import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.FragmentMainPageBinding
 import ru.yesds.yesdsapp.ui.viewmodel.MainPageViewModel
 
@@ -34,11 +35,23 @@ class MainPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.image.observe(viewLifecycleOwner) {
-            println("!!! Image: $it")
-            Glide.with(this@MainPageFragment)
-                .load(it)
-                .into(binding.ivCat)
+        val navController = view.findNavController()
+
+        // navigation buttons
+        binding.btnAbout.setOnClickListener {
+            navController.navigate(R.id.aboutFragment)
+        }
+        binding.btnStyles.setOnClickListener {
+            navController.navigate(R.id.stylesFragment)
+        }
+        binding.btnPrices.setOnClickListener {
+            navController.navigate(R.id.pricesFragment)
+        }
+        binding.btnTeachers.setOnClickListener {
+            navController.navigate(R.id.teachersFragment)
+        }
+        binding.btnContacts.setOnClickListener {
+            navController.navigate(R.id.contactsFragment)
         }
     }
 
