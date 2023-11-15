@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="246dp"
+        app:layout_constraintGuide_begin="226dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -114,5 +114,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/glvTwo"
         app:layout_constraintTop_toBottomOf="@+id/btnTeachers" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/question_msg"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ivIconVK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnContacts" />
+
+    <ImageView
+        android:id="@+id/ivIconVK"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/glvTwo"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
+        app:srcCompat="@drawable/icon_vk" />
+
+    <ImageView
+        android:id="@+id/ivIconTelegram"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/glvTwo"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
+        app:srcCompat="@drawable/icon_telegram" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

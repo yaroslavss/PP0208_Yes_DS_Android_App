@@ -25,6 +25,7 @@
     <!-- Strings used for main page fragment -->
     <string name="first_training_msg_1">Первое занятие БЕСПЛАТНО!</string>
     <string name="first_training_msg_2">При первом посещении Студии</string>
+    <string name="question_msg">Есть вопрос? Напиши нам.</string>
 
     <!-- Strings used for profile fragment -->
     <string name="btn_logout_text">Выход</string>

@@ -3,14 +3,12 @@ package ru.yesds.yesdsapp.ui.view
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.ActivityDanceStudioBinding
 
@@ -29,16 +27,28 @@ class DanceStudioActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         // set up navigation
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
         val bottomNavView: BottomNavigationView = findViewById(R.id.bottom_navigation)
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.aboutFragment,
+                R.id.callStudioFragment,
+                R.id.contactsFragment,
+                R.id.loginFragment,
+                R.id.mainPageFragment,
+                R.id.membershipFragment,
+                R.id.messagesFragment,
+                R.id.pricesFragment,
+                R.id.profileFragment,
+                R.id.stylesFragment,
+                R.id.teachersFragment,
+                R.id.timetableFragment
+            )
+        )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
         bottomNavView.setupWithNavController(navController)
     }
 
