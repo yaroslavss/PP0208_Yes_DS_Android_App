@@ -30,6 +30,7 @@ class StyleListRecyclerAdapter(
         val item = styles[position]
         holder.itemView.apply {
             binding.ivImgStyle.setImageResource(item.image)
+            binding.tvTitleStyle.text = item.name
         }
     }
 

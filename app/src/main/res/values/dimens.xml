@@ -4,4 +4,6 @@
 
     <dimen name="fragment_content_margin_top">68dp</dimen>
     <dimen name="default_margin_top">16dp</dimen>
+    <dimen name="cardview_elevation">5dp</dimen>
+    <dimen name="cardview_radius">12dp</dimen>
 </resources>

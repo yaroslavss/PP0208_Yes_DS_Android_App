@@ -8,11 +8,11 @@ import ru.yesds.yesdsapp.model.Style
 
 class StylesViewModel : ViewModel() {
     private val styleList = listOf(
-        Style("Хастл", R.drawable.img_style),
-        Style("Вог", R.drawable.img_style),
-        Style("Text", R.drawable.img_style),
-        Style("Text", R.drawable.img_style),
-        Style("Text", R.drawable.img_style)
+        Style("ХАСТЛ", R.drawable.img_style),
+        Style("ВОГ", R.drawable.img_style),
+        Style("TEXT", R.drawable.img_style),
+        Style("TEXT", R.drawable.img_style),
+        Style("TEXT", R.drawable.img_style)
     )
     private val _styleListLiveData = MutableLiveData<List<Style>>()
     val styleListLiveData: LiveData<List<Style>> = _styleListLiveData
