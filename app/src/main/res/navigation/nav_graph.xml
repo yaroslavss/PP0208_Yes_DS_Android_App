@@ -76,4 +76,9 @@
         android:label="@string/membership_fragment_label_bottom"
         tools:layout="@layout/fragment_membership">
     </fragment>
+    <fragment
+        android:id="@+id/styleDetailsFragment"
+        android:name="ru.yesds.yesdsapp.ui.view.fragments.StyleDetailsFragment"
+        tools:layout="@layout/fragment_style_details">
+    </fragment>
 </navigation>

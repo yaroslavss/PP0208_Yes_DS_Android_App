@@ -9,6 +9,7 @@ import ru.yesds.yesdsapp.model.Style
 
 class StyleListRecyclerAdapter(
     var styles: List<Style>,
+    private val onItemClick: (style: Style) -> Unit
 ) : RecyclerView.Adapter<StyleListRecyclerAdapter.StyleViewHolder>() {
 
     private var _binding: ItemStyleBinding? = null
@@ -31,6 +32,10 @@ class StyleListRecyclerAdapter(
         holder.itemView.apply {
             binding.ivImgStyle.setImageResource(item.image)
             binding.tvTitleStyle.text = item.name
+        }
+
+        binding.root.setOnClickListener {
+            onItemClick(styles[position])
         }
     }
 

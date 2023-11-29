@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.FragmentStylesBinding
 import ru.yesds.yesdsapp.ui.view.adapters.StyleListRecyclerAdapter
 import ru.yesds.yesdsapp.ui.viewmodel.StylesViewModel
@@ -37,7 +39,12 @@ class StylesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = StyleListRecyclerAdapter(listOf())
+        val navController = view.findNavController()
+        val adapter = StyleListRecyclerAdapter(listOf()) { style ->
+            val bundle = Bundle();
+            bundle.putParcelable("style", style);
+            navController.navigate(R.id.styleDetailsFragment, bundle)
+        }
 
         binding.rvStyles.adapter = adapter
         binding.rvStyles.layoutManager = LinearLayoutManager(activity)
