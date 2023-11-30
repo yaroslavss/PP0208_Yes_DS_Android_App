@@ -10,6 +10,7 @@
     <string name="about_fragment_label">О студии</string>
     <string name="styles_fragment_label">Направления</string>
     <string name="teachers_fragment_label">Преподаватели</string>
+    <string name="teacher_detail_fragment_label">Преподаватель</string>
     <string name="timetable_fragment_label">Расписание</string>
     <string name="prices_fragment_label">Цены</string>
     <string name="contacts_fragment_label">Контакты</string>

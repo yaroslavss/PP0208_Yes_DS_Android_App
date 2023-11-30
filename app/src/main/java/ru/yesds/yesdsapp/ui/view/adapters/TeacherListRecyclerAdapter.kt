@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.yesds.yesdsapp.databinding.ItemTeacherBinding
 import ru.yesds.yesdsapp.model.Teacher
 
-class TeacherListRecyclerAdapter(var teachers: List<Teacher>) :
-    RecyclerView.Adapter<TeacherListRecyclerAdapter.TeacherViewHolder>() {
+class TeacherListRecyclerAdapter(
+    var teachers: List<Teacher>,
+    private val onItemClick: (teacher: Teacher) -> Unit
+) : RecyclerView.Adapter<TeacherListRecyclerAdapter.TeacherViewHolder>() {
 
     private var _binding: ItemTeacherBinding? = null
     private val binding get() = _binding!!
@@ -36,6 +38,10 @@ class TeacherListRecyclerAdapter(var teachers: List<Teacher>) :
             else
                 binding.tvTeacherLeadership.text = "Руководитель студии"
             binding.tvTeacherProfession.text = item.profession
+        }
+
+        binding.root.setOnClickListener {
+            onItemClick(teachers[position])
         }
     }
 }

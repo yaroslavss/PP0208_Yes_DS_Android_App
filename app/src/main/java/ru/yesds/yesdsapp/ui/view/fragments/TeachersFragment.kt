@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.FragmentTeachersBinding
 import ru.yesds.yesdsapp.ui.view.adapters.TeacherListRecyclerAdapter
 import ru.yesds.yesdsapp.ui.viewmodel.TeachersViewModel
@@ -37,7 +39,12 @@ class TeachersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = TeacherListRecyclerAdapter(listOf())
+        val navController = view.findNavController()
+        val adapter = TeacherListRecyclerAdapter(listOf()) { teacher ->
+            val bundle = Bundle();
+            bundle.putParcelable("teacher", teacher);
+            navController.navigate(R.id.teacherDetailsFragment, bundle)
+        }
 
         binding.rvTeachers.adapter = adapter
         binding.rvTeachers.layoutManager = LinearLayoutManager(activity)
