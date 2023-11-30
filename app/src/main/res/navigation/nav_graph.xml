@@ -81,4 +81,10 @@
         android:name="ru.yesds.yesdsapp.ui.view.fragments.StyleDetailsFragment"
         tools:layout="@layout/fragment_style_details">
     </fragment>
+    <fragment
+        android:id="@+id/teacherDetailsFragment"
+        android:name="ru.yesds.yesdsapp.ui.view.fragments.TeacherDetailsFragment"
+        android:label="@string/teacher_detail_fragment_label"
+        tools:layout="@layout/fragment_teacher_details">
+    </fragment>
 </navigation>
