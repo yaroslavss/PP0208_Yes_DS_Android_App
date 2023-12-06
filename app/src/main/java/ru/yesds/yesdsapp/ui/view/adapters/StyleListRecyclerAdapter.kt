@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.yesds.yesdsapp.databinding.ItemStyleBinding
-import ru.yesds.yesdsapp.model.Style
+import ru.yesds.yesdsapp.domain.model.Style
 
 class StyleListRecyclerAdapter(
     var styles: List<Style>,

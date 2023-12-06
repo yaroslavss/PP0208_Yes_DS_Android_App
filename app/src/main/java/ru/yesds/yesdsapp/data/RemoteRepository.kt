@@ -1,6 +1,6 @@
 package ru.yesds.yesdsapp.data
 
-import ru.yesds.yesdsapp.model.Cat
+import ru.yesds.yesdsapp.domain.model.Cat
 import ru.yesds.yesdsapp.util.ApiResponse
 
 interface RemoteRepository {

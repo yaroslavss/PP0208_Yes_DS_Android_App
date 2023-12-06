@@ -2,7 +2,7 @@ package ru.yesds.yesdsapp.data
 
 import retrofit2.HttpException
 import ru.yesds.yesdsapp.data.mapper.CatMapper.toCat
-import ru.yesds.yesdsapp.model.Cat
+import ru.yesds.yesdsapp.domain.model.Cat
 import ru.yesds.yesdsapp.util.ApiResponse
 import java.io.IOException
 

@@ -2,7 +2,7 @@ package ru.yesds.yesdsapp.data
 
 import retrofit2.HttpException
 import ru.yesds.yesdsapp.data.model.AuthResponse
-import ru.yesds.yesdsapp.model.User
+import ru.yesds.yesdsapp.domain.model.User
 import ru.yesds.yesdsapp.util.ApiResponse
 import java.io.IOException
 

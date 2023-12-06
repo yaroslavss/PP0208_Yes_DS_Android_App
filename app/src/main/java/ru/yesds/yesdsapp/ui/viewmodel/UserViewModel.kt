@@ -9,7 +9,7 @@ import ru.yesds.yesdsapp.data.AuthApiImpl
 import ru.yesds.yesdsapp.data.AuthRepositoryImpl
 import ru.yesds.yesdsapp.data.DatabaseRepositoryImpl
 import ru.yesds.yesdsapp.data.mapper.AuthMapper.toUserEntity
-import ru.yesds.yesdsapp.model.User
+import ru.yesds.yesdsapp.domain.model.User
 import ru.yesds.yesdsapp.util.ApiResponse
 import javax.inject.Inject
 

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ru.yesds.yesdsapp.R
-import ru.yesds.yesdsapp.model.Teacher
+import ru.yesds.yesdsapp.domain.model.Teacher
 
 class TeachersViewModel : ViewModel() {
     private val description = "О танцевальном пути Екатерины:\n" +
