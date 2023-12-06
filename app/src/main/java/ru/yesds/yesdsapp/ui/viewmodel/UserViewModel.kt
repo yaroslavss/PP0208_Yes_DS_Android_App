@@ -4,20 +4,23 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import ru.yesds.yesdsapp.App
-import ru.yesds.yesdsapp.data.AuthApiImpl
+import ru.yesds.yesdsapp.data.mapper.AuthMapper.toUserEntity
 import ru.yesds.yesdsapp.data.repository.AuthRepositoryImpl
 import ru.yesds.yesdsapp.data.repository.DatabaseRepositoryImpl
-import ru.yesds.yesdsapp.data.mapper.AuthMapper.toUserEntity
 import ru.yesds.yesdsapp.domain.model.User
 import ru.yesds.yesdsapp.util.ApiResponse
+import java.io.IOException
 import javax.inject.Inject
 
 class UserViewModel : ViewModel() {
-    private val repositoryImpl = AuthRepositoryImpl(AuthApiImpl())
 
     @Inject
     lateinit var databaseRepositoryImpl: DatabaseRepositoryImpl
+
+    @Inject
+    lateinit var remoteRepositoryImpl: AuthRepositoryImpl
 
     init {
         App.instance.dagger.inject(this)
@@ -25,14 +28,28 @@ class UserViewModel : ViewModel() {
 
     fun signIn(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = repositoryImpl.signIn(user)
-            if (response is ApiResponse.Success) {
-                response.data.let { authResponse ->
+            val result = try {
+                val response = remoteRepositoryImpl.signIn(user)
+                if (response.isSuccessful()) {
+                    ApiResponse.Success(response.body()!!)
+                } else {
+                    ApiResponse.Error(response.message())
+                }
+            } catch (e: HttpException) {
+                // request exception
+                ApiResponse.Error(e.toString())
+            } catch (e: IOException) {
+                // no internet exception
+                ApiResponse.Error(e.toString())
+            }
+
+            if (result is ApiResponse.Success) {
+                result.data.let { authResponse ->
                     databaseRepositoryImpl.saveUser(authResponse.toUserEntity())
                 }
             }
-            if (response is ApiResponse.Error) {
-                println("!!! Error: ${response.message}")
+            if (result is ApiResponse.Error) {
+                println("!!! Error: ${result.message}")
             }
         }
     }

@@ -1,4 +1,4 @@
-package ru.yesds.yesdsapp.data
+package ru.yesds.yesdsapp.util
 
 object Constants {
     const val THECATAPI_BASE_URL = "https://api.thecatapi.com/"
