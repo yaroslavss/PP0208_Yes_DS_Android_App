@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
-import ru.yesds.yesdsapp.data.DatabaseRepositoryImpl
+import ru.yesds.yesdsapp.data.repository.DatabaseRepositoryImpl
 import ru.yesds.yesdsapp.data.db.AppDatabase
 import ru.yesds.yesdsapp.data.db.UserDao
 import javax.inject.Singleton

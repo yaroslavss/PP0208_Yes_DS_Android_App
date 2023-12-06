@@ -6,8 +6,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.yesds.yesdsapp.App
 import ru.yesds.yesdsapp.data.AuthApiImpl
-import ru.yesds.yesdsapp.data.AuthRepositoryImpl
-import ru.yesds.yesdsapp.data.DatabaseRepositoryImpl
+import ru.yesds.yesdsapp.data.repository.AuthRepositoryImpl
+import ru.yesds.yesdsapp.data.repository.DatabaseRepositoryImpl
 import ru.yesds.yesdsapp.data.mapper.AuthMapper.toUserEntity
 import ru.yesds.yesdsapp.domain.model.User
 import ru.yesds.yesdsapp.util.ApiResponse

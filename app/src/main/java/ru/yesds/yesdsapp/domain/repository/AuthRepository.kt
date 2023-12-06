@@ -1,4 +1,4 @@
-package ru.yesds.yesdsapp.data
+package ru.yesds.yesdsapp.domain.repository
 
 import ru.yesds.yesdsapp.data.model.AuthResponse
 import ru.yesds.yesdsapp.domain.model.User

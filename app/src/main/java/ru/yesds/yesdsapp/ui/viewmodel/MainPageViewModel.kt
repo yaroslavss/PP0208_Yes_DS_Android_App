@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.yesds.yesdsapp.data.RemoteApiImpl
-import ru.yesds.yesdsapp.data.RemoteRepositoryImpl
+import ru.yesds.yesdsapp.data.repository.RemoteRepositoryImpl
 import ru.yesds.yesdsapp.util.ApiResponse
 
 class MainPageViewModel : ViewModel() {

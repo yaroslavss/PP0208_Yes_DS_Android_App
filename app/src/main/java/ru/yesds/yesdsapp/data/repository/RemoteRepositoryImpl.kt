@@ -1,17 +1,19 @@
-package ru.yesds.yesdsapp.data
+package ru.yesds.yesdsapp.data.repository
 
 import retrofit2.HttpException
-import ru.yesds.yesdsapp.data.model.AuthResponse
-import ru.yesds.yesdsapp.domain.model.User
+import ru.yesds.yesdsapp.data.RemoteApi
+import ru.yesds.yesdsapp.data.mapper.CatMapper.toCat
+import ru.yesds.yesdsapp.domain.model.Cat
+import ru.yesds.yesdsapp.domain.repository.RemoteRepository
 import ru.yesds.yesdsapp.util.ApiResponse
 import java.io.IOException
 
-class AuthRepositoryImpl(private val authApi: AuthApi) : AuthRepository {
-    override suspend fun signIn(user: User): ApiResponse<AuthResponse> {
+class RemoteRepositoryImpl(private val remoteApi: RemoteApi) : RemoteRepository {
+    override suspend fun getCat(): ApiResponse<Cat?> {
         return try {
-            val response = authApi.signIn(user)
+            val response = remoteApi.getCat()
             if (response.isSuccessful()) {
-                ApiResponse.Success(response.body()!!)
+                ApiResponse.Success(response.body()?.toCat())
             } else {
                 ApiResponse.Error(response.message())
             }
