@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.yesds.yesdsapp.databinding.ItemTeacherBinding
-import ru.yesds.yesdsapp.model.Teacher
+import ru.yesds.yesdsapp.domain.model.Teacher
 
 class TeacherListRecyclerAdapter(
     var teachers: List<Teacher>,

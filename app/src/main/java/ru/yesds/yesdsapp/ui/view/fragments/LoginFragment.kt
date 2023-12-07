@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.FragmentLoginBinding
-import ru.yesds.yesdsapp.model.User
+import ru.yesds.yesdsapp.domain.model.User
 import ru.yesds.yesdsapp.ui.viewmodel.UserViewModel
 
 class LoginFragment : Fragment() {

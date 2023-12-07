@@ -36,9 +36,10 @@
     <string name="btn_logout_text">Выход</string>
 
     <!-- Strings used for login fragment -->
-    <string name="et_login_label">Введите логин</string>
-    <string name="et_password_label">Введите пароль</string>
-    <string name="btn_auth_text">Вход</string>
+    <string name="login_text">Вход</string>
+    <string name="et_login_label">Номер телефона</string>
+    <string name="et_password_label">Пароль</string>
+    <string name="btn_auth_text">ВОЙТИ</string>
     <string name="msg_empty_auth">Введите имя пользователя и пароль</string>
 
     <string name="lorem_ipsum">

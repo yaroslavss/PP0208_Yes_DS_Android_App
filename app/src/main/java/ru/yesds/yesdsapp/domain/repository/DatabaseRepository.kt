@@ -1,4 +1,4 @@
-package ru.yesds.yesdsapp.data
+package ru.yesds.yesdsapp.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 import ru.yesds.yesdsapp.data.db.UserEntity

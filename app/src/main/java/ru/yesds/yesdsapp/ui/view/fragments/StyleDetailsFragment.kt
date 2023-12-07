@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ru.yesds.yesdsapp.databinding.FragmentStyleDetailsBinding
-import ru.yesds.yesdsapp.model.Style
+import ru.yesds.yesdsapp.domain.model.Style
 
 class StyleDetailsFragment : Fragment() {
 

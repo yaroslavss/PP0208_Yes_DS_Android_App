@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.yesds.yesdsapp.databinding.FragmentTeacherDetailsBinding
-import ru.yesds.yesdsapp.model.Teacher
+import ru.yesds.yesdsapp.domain.model.Teacher
 
 class TeacherDetailsFragment : Fragment() {
 

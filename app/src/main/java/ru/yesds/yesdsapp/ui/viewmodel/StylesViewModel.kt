@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ru.yesds.yesdsapp.R
-import ru.yesds.yesdsapp.model.Style
+import ru.yesds.yesdsapp.domain.model.Style
 
 class StylesViewModel : ViewModel() {
     private val description = "Хастл - это современный парный социальный танец.\n" +

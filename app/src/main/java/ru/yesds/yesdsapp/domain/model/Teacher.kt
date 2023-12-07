@@ -1,4 +1,4 @@
-package ru.yesds.yesdsapp.model
+package ru.yesds.yesdsapp.domain.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

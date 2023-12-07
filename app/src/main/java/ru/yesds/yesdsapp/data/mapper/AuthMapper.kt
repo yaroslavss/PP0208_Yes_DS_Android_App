@@ -2,7 +2,7 @@ package ru.yesds.yesdsapp.data.mapper
 
 import ru.yesds.yesdsapp.data.db.UserEntity
 import ru.yesds.yesdsapp.data.model.AuthResponse
-import ru.yesds.yesdsapp.model.User
+import ru.yesds.yesdsapp.domain.model.User
 
 object AuthMapper {
     fun AuthResponse.toUser() = User(
