@@ -51,6 +51,11 @@
         android:name="ru.yesds.yesdsapp.ui.view.fragments.ProfileFragment"
         android:label="@string/profile_fragment_label"
         tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/callStudioFragment"

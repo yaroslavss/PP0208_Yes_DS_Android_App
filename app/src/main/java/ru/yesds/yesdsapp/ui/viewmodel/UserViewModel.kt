@@ -9,7 +9,7 @@ import ru.yesds.yesdsapp.App
 import ru.yesds.yesdsapp.data.mapper.AuthMapper.toUserEntity
 import ru.yesds.yesdsapp.data.repository.AuthRepositoryImpl
 import ru.yesds.yesdsapp.data.repository.DatabaseRepositoryImpl
-import ru.yesds.yesdsapp.domain.model.User
+import ru.yesds.yesdsapp.domain.model.UserLogin
 import ru.yesds.yesdsapp.util.ApiResponse
 import java.io.IOException
 import javax.inject.Inject
@@ -26,10 +26,10 @@ class UserViewModel : ViewModel() {
         App.instance.dagger.inject(this)
     }
 
-    fun signIn(user: User) {
+    fun signIn(userLogin: UserLogin) {
         viewModelScope.launch(Dispatchers.IO) {
             val result = try {
-                val response = remoteRepositoryImpl.signIn(user)
+                val response = remoteRepositoryImpl.signIn(userLogin)
                 if (response.isSuccessful()) {
                     ApiResponse.Success(response.body()!!)
                 } else {

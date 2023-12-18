@@ -15,6 +15,7 @@ import kotlinx.coroutines.withContext
 import ru.yesds.yesdsapp.R
 import ru.yesds.yesdsapp.databinding.FragmentLoginBinding
 import ru.yesds.yesdsapp.domain.model.User
+import ru.yesds.yesdsapp.domain.model.UserLogin
 import ru.yesds.yesdsapp.ui.viewmodel.UserViewModel
 
 class LoginFragment : Fragment() {
@@ -59,9 +60,9 @@ class LoginFragment : Fragment() {
             }
 
             // dummy login:
-            // login = atuny0
-            // password = 9uQFF1Lh
-            viewModel.signIn(User(login, password, ""))
+            // login = 71111111114
+            // password = Aa1234566_
+            viewModel.signIn(UserLogin(login, password))
 
             scope = CoroutineScope(Dispatchers.IO).also { scope ->
                 scope.launch {
