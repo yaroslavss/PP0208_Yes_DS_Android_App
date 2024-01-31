@@ -48,7 +48,7 @@ class ProfileFragment : Fragment() {
                     withContext(Dispatchers.Main) {
                         println("!!! PF: userEntity = $userEntity")
                         if (userEntity == null) {
-                            navController.navigate(R.id.loginFragment)
+                            navController.navigate(R.id.action_profileFragment_to_loginFragment)
                         }
                     }
                 }

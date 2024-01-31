@@ -5,12 +5,12 @@ import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import ru.yesds.yesdsapp.data.model.AuthResponse
-import ru.yesds.yesdsapp.domain.model.User
+import ru.yesds.yesdsapp.domain.model.UserLogin
 
 interface AuthService {
     @Headers("Content-Type: application/json")
-    @POST("auth/login")
+    @POST("checkPassword")
     suspend fun signIn(
-        @Body user: User
+        @Body userLogin: UserLogin
    ): Response<AuthResponse>
 }
