@@ -3,10 +3,22 @@ package ru.yesds.yesdsapp.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import ru.yesds.yesdsapp.App
 import ru.yesds.yesdsapp.R
+import ru.yesds.yesdsapp.data.repository.AuthRepositoryImpl
 import ru.yesds.yesdsapp.domain.model.Teacher
+import java.io.IOException
+import javax.inject.Inject
 
 class TeachersViewModel : ViewModel() {
+
+    @Inject
+    lateinit var remoteRepositoryImpl: AuthRepositoryImpl
+
     private val description = "О танцевальном пути Екатерины:\n" +
             "За свою танцевальную карьеру танцует такие стили как Hip-hop, Jazz-Funk, Dancehall и TWERK. \n" +
             "Участвовала в фестивалях Project 818,Fame your Choreo, также на различных городских фестивалях. На данный момент танцует и преподает TWERK и dancehall. Старается развиваться и в других стилях, \n" +
@@ -79,6 +91,27 @@ class TeachersViewModel : ViewModel() {
     val teacherListLiveData: LiveData<List<Teacher>> = _teacherListLiveData
 
     init {
+        App.instance.dagger.inject(this)
         _teacherListLiveData.postValue(teacherList)
+    }
+
+    fun getTeachers() {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = remoteRepositoryImpl.getTeachers()
+                if (response.isSuccessful) {
+                    //_loginResult.postValue(Resource.Success(response.body()!!))
+                    println("!!! ${response.body()}")
+                } else {
+                    //_loginResult.postValue(Resource.Error(response.message()))
+                }
+            } catch (e: HttpException) {
+                // request exception
+                //_loginResult.postValue(Resource.Error(e.toString()))
+            } catch (e: IOException) {
+                // no internet exception
+                //_loginResult.postValue(Resource.Error(e.toString()))
+            }
+        }
     }
 }

@@ -49,6 +49,8 @@ class TeachersFragment : Fragment() {
         binding.rvTeachers.adapter = adapter
         binding.rvTeachers.layoutManager = LinearLayoutManager(activity)
 
+        viewModel.getTeachers()
+
         viewModel.teacherListLiveData.observe(viewLifecycleOwner) { list ->
             adapter.teachers = list
             adapter.notifyDataSetChanged()

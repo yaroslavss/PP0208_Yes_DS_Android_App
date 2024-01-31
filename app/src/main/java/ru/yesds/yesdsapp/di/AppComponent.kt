@@ -5,6 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.yesds.yesdsapp.di.modules.DatabaseModule
 import ru.yesds.yesdsapp.di.modules.RemoteModule
+import ru.yesds.yesdsapp.ui.viewmodel.TeachersViewModel
 import ru.yesds.yesdsapp.ui.viewmodel.UserViewModel
 import javax.inject.Singleton
 
@@ -23,4 +24,6 @@ interface AppComponent {
     }
 
     fun inject(userViewModel: UserViewModel)
+
+    fun inject(teachersViewModel: TeachersViewModel)
 }
